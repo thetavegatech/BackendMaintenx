@@ -29,8 +29,8 @@ app.use(cookieparser())
 const AssetMaster = require('./models/AssetModel');
 
 
-const mongourl = "mongodb://localhost:27017/MaintenX?directConnection=true" 
-// const mongourl = "mongodb+srv://vaibhavdevkar101:Vaibhav123@cluster0.518nyqj.mongodb.net/MMS_DB?retryWrites=true&w=majority"
+// const mongourl = "mongodb://localhost:27017/MaintenX?directConnection=true" 
+const mongourl = "mongodb+srv://vaibhavdevkar101:Vaibhav123@cluster0.518nyqj.mongodb.net/MaintenX?retryWrites=true&w=majority"
 
 
 mongoose.connect(mongourl, {
