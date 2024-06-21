@@ -7,7 +7,7 @@ exports.createAsset = async (req, res) => {
     const asset = new AssetMaster(req.body);
 
     // Generate QR Code
-    const qrData = `https://mms-frontend.onrender.com/#/assetRecord/${asset._id}`;
+    const qrData = `https://maintenx.onrender.com/#/assetRecord/${asset._id}`;
     // const qrData = `AssetName: ${asset.AssetName}, MachineNo: ${asset.MachineNo}, SrNo: ${asset.SrNo}`;
     // const qrCode = await QRCode.toDataURL(qrData);
     // const qrCode = await QRCode.toDataURL(`${asset._id}`);
