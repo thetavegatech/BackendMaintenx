@@ -14,6 +14,8 @@ const User = require("./models/userModel")
 const cbmRoutes = require('./Routes/cbmRoute');
 const tbmRoutes = require('./Routes/tbmRoute');
 const pmRoutes = require('./Routes/pmRoute');
+const routerNo = require('./controller/userNoContoller');
+
 // const AssetMaster = require('./models/AssetModel')
 
 app.use(bodyParser.json({ limit: '50mb' }));
@@ -50,7 +52,7 @@ app.use("/api/users", userRoute)
 
 
 app.use('/api', AssetRoutes);
-
+app.use(routerNo);
 // Use CBM routes
 app.use('/api', cbmRoutes);
 app.use('/api', tbmRoutes);
