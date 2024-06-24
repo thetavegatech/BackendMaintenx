@@ -89,4 +89,24 @@ router.delete('/breakdown/:id', async (req, res) => {
   }
 });
 
+router.get('/getBreakdownStatus/:MachineName', async (req, res) => {
+  const machineName = req.params.MachineName;
+  
+    try {
+      // Find the latest breakdown with the specified machineName by sorting by createdAt/updatedAt in descending order
+      const machineDetails = await BreakDown.findOne({ MachineName: machineName })
+        .sort({ _id: -1 }) // Assuming `updatedAt` is the field indicating the last update
+        .exec();
+  
+      if (!machineDetails) {
+        return res.status(404).send("Machine not found");
+      }
+  
+      // Return only the status
+      res.json({ status: machineDetails.Status });
+    } catch (err) {
+      res.status(500).send(err);
+    }
+  });
+
 module.exports = router;
