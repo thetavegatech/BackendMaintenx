@@ -14,11 +14,11 @@ const BreakDownSchema = new Schema({
         default: Date.now,
     },
     BreakdownStartDate: {
-        type: String,
+        type: Date,
         // require: true
     },
     BreakdownEndDate: {
-        type: String,
+        type: Date,
         // require: true
     },
     BreakdownStartTime: {
